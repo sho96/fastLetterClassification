@@ -24,7 +24,7 @@ for img, label in zip(testX, testY):
 accuracy = corrects / len(testX)
 print(f"accuracy: {accuracy * 100}%")
 
-#you can use pickle library to save your model and use it again or use it for another project
+#you can use pickle library to save your model and use it again on another projects (this works on the same project, of course)
 data = pickle.dumps(model)
 f = open("~file path~", "wb")
 f.write(data)
