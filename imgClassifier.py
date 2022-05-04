@@ -3,7 +3,7 @@ from numba import int32, float32
 import numpy as np
 import random
  
-class imgClassifier:
+class Classifier:
     def __init__(self, imgSize, outputs):
         self.imgSize = imgSize
         self.weights = np.array([[[random.uniform(-1.0, 1.0)] * imgSize[0] for i in range(imgSize[1])] for i in range(outputs)], dtype = np.float32)
