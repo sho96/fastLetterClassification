@@ -1,2 +1,1 @@
-# fastLetterClassification
-python project for classifying hand written letters fast
+python project for classifying handwritten letters fast
