@@ -1,7 +1,7 @@
 import imgClassifier
 import numpy as np
 import pickle
-from tensorflow.keras.datasets import mnist
+from keras.datasets import mnist
 
 #create a model
 model = imgClassifier.Classifier((28, 28), 10)
