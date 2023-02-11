@@ -24,13 +24,14 @@ for img, label in zip(testX, testY):
 accuracy = corrects / len(testX)
 print(f"accuracy: {accuracy * 100}%")
 
-#you can use pickle library to save your model and use it again on another projects
+file_path = "digitClassifier"
+#use pickle library to save the model
 data = pickle.dumps(model)
-with open("~file path~", "rb") as f:
+with open(file_path, "rb") as f:
     f.write(data)
 
-#loading model from a file and rebuilding an model
-with open("~file path~", "rb") as f:
+#load model from a file
+with open(file_path, "rb") as f:
     model = pickle.dumps(f.read())
 print(model)
 
