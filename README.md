@@ -1,1 +1,1 @@
-python project for classifying handwritten letters faster
+python project for classifying handwritten letters fast
