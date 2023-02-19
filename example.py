@@ -35,6 +35,8 @@ with open(file_path, "rb") as f:
     model = pickle.dumps(f.read())
 print(model)
 
+
+
 #doing the same thing with fastImgClassifier
 import fastImgClassifier
 
