@@ -5,7 +5,7 @@ from keras.datasets import mnist
 from tqdm import tqdm
 import cv2
  
-class Classifiernp:
+class Classifier:
     def __init__(self, imgSize, outputs, randomWeights = True, initVal = 1):
         self.imgSize = imgSize
         if randomWeights:
