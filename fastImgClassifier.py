@@ -15,7 +15,7 @@ class Classifier:
         self.outputs = np.array([0] * outputs, dtype = np.float32)
         self.biases = np.array([0] * outputs , dtype = np.float32)
         
-    def train(self, img, outputIndex, step = 1): #use trainAll method for faster speed
+    def train(self, img, outputIndex, step = 1): #use trainAll() method for faster speed
         for i in range(len(self.outputs)):
             self.outputs[i] = np.sum(img * self.weights[i])
             
