@@ -35,3 +35,24 @@ with open(file_path, "rb") as f:
     model = pickle.dumps(f.read())
 print(model)
 
+#doing the same thing with fastImgClassifier
+import fastImgClassifier
+
+model = fastImgClassifier.Classifier((28,28), 10)
+
+model.trainAll(trainX, trainY)
+
+accuracy = model.evaluate(testX, testY)
+
+print(f"accuracy: {accuracy * 100}%")
+
+file_path = "digitClassifier"
+
+data = pickle.dumps(model)
+
+with open(file_path, "wb") as f:
+    f.write(data)
+    
+with open(file_path, "rb") as f:
+    model = pickle.dumps(f.read())
+print(model)
