@@ -1,7 +1,8 @@
-import imgClassifier
+import fastImgClassifier as imgClassifier
 import numpy as np
 import pickle
 from keras.datasets import mnist
+from tqdm import tqdm
 
 #create a model with an input shape of 28x28 and 10 outputs
 model = imgClassifier.Classifier((28, 28), 10)
@@ -10,7 +11,7 @@ model = imgClassifier.Classifier((28, 28), 10)
 (trainX, trainY),(testX, testY) = mnist.load_data()
 
 #train a model with input and its label (index of an output neuron)
-for img, label in zip(trainX, trainY):
+for img, label in tqdm(zip(trainX, trainY)):
     model.train(img, label)
 
 #test a model for its accuracy
@@ -27,13 +28,12 @@ print(f"accuracy: {accuracy * 100}%")
 file_path = "digitClassifier"
 #use pickle library to save the model
 data = pickle.dumps(model)
-with open(file_path, "rb") as f:
+with open(file_path, "wb") as f:
     f.write(data)
 
 #load model from a file
 with open(file_path, "rb") as f:
     model = pickle.dumps(f.read())
-print(model)
 
 
 
@@ -56,5 +56,4 @@ with open(file_path, "wb") as f:
     f.write(data)
     
 with open(file_path, "rb") as f:
-    model = pickle.dumps(f.read())
-print(model)
+    model = pickle.loads(f.read())
